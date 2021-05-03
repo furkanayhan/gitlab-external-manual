@@ -1,0 +1,43 @@
+build:
+  stage: build
+  script: echo build
+
+test1:
+  stage: test
+  script: exit 0
+  only:
+    refs:
+      - external_pull_requests
+    changes:
+      - .gitlab-ci.yml
+
+test2:
+  stage: test
+  script: exit 0
+  only:
+    refs:
+      - external_pull_requests
+    changes:
+      - README.md
+
+test3:
+  stage: test
+  script: exit 0
+  only:
+    refs:
+      - external_pull_requests
+
+test4:
+  stage: test
+  script: exit 0
+  only:
+    changes:
+      - .gitlab-ci.yml
+
+test5:
+  stage: test
+  script: exit 0
+  only:
+    changes:
+      - README.md
+ 
